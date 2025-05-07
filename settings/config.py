@@ -43,9 +43,6 @@ class Settings(BaseSettings):
     smtp_username: str = Field(default='your-mailtrap-username', description="SMTP username")
     smtp_password: str = Field(default='your-mailtrap-password', description="SMTP password")
 
-<<<<<<< HEAD
-    # MinIO configuration
-=======
     # minoi config
     MINIO_ENDPOINT: str = Field(default= "minio:9000", description="Minio endpoint")
     MINIO_ACCESS_KEY: str = Field(default= "your_minio_access_key", description="Minio access key")
@@ -54,7 +51,6 @@ class Settings(BaseSettings):
     MINIO_BUCKET_NAME: str = Field(default= "demo", description="Minio bucket name")
     
     # ✅ MinIO configuration
->>>>>>> fixed errors
     minio_endpoint: str = Field(default='localhost:9000', description="MinIO server endpoint")
     minio_bucket_name: str = Field(default='demo', description="Default bucket name for MinIO")
     minio_access_key: str = Field(default='minioadmin', description="MinIO access key")
