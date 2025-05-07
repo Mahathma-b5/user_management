@@ -15,11 +15,11 @@ WORKDIR /myapp
 RUN apt-get update && apt-get install -y --no-install-recommends \
     gcc \
     libpq-dev \
-<<<<<<< HEAD
+
     && apt-get install -y --allow-downgrades libc-bin=2.36-9+deb12u7 \
-=======
+
     libc-bin \
->>>>>>> development
+ development
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
@@ -33,13 +33,12 @@ RUN python -m venv /.venv \
 # Define a second stage for the runtime, using the same Debian Bookworm slim image
 FROM python:3.12-slim-bookworm as final
 
-<<<<<<< HEAD
 # Upgrade libc-bin in the final stage to ensure security patch is applied
 RUN apt-get update && apt-get install -y --allow-downgrades libc-bin=2.36-9+deb12u7 \
-=======
+
 # Update libc-bin using the default version in the slim base image
 RUN apt-get update && apt-get install -y libc-bin \
->>>>>>> development
+development
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
